@@ -6,28 +6,29 @@
 
 	<body>
 		<?php 
-			$rows=3;
-			$cells=10;
-			$columns=4;
-			$width = $columns * 100;
-			echo '<h2>Hasil Generate Tabel Fleksibel ' .$cells.' sel dan ' .$columns.' kolom</h2><br />';
-			echo "<table width=".$width." border=1>";
-			$rw = 0;
-			$cel = 1;
-			while ($rw < $rows && $cel <= $cells){
-				echo "<tr>";
-				$cl = 0;
-				while ($cl < $columns){
-					if ($cel <= $cells){
-						echo "<td><div align=center>".$cel."</div></td>";
-						$cel++;
+			function tabel($sel,$baris){
+				$columns=4;
+				$width = $columns * 100;
+				echo '<h2>Hasil Generate Tabel Fleksibel ' .$sel.' sel dan ' .$columns.' kolom</h2><br />';
+				echo "<table width=".$width." border=1>";
+				$rw = 0;
+				$cel = 1;
+				while ($rw < $baris && $cel <= $sel){
+					echo "<tr>";
+					$cl = 0;
+					while ($cl < $columns){
+						if ($cel <= $sel){
+							echo "<td><div align=center>".$cel."</div></td>";
+							$cel++;
+						}
+						$cl++;
 					}
-					$cl++;
+					echo "</tr>";
+					$rw++;
 				}
-				echo "</tr>";
-				$rw++;
+				echo "</table>";
 			}
-			echo "</table>";
+			tabel(10,4);
 		?>
 	</body>
 </html>
