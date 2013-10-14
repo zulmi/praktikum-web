@@ -38,7 +38,7 @@
 				>ABRI				<!--membuat menu pilihan combo box dengan value ABRI-->
 				<option value="PNS"
 				<?php
-					if ($a == 'PNS'){						//option Mahasiswa akan terseleksi apabila variabel a = 'PNS'
+					if ($a == 'PNS' or !isset($_POST['job'])){						//option Mahasiswa akan terseleksi apabila variabel a = 'PNS'
 						echo 'selected="selected"';
 					}
 				?>
